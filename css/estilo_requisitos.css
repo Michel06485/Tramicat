@@ -1,0 +1,433 @@
+:root {
+    --primary-color: rgb(118, 191, 240);
+    --text-color: rgb(77, 78, 78);
+    --hover-color: blue;
+    --background-color: #f8f8f8;
+    --box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: white;
+    color: var(--text-color);
+}
+
+header {
+    height: 8rem;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    background-color: white;
+    box-shadow: var(--box-shadow);
+}
+
+.navbar {
+    max-width: 170rem; /* 1700px */
+    margin: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo {
+    height: 60px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  text-decoration: none;
+}
+
+.imagen {
+    width: 60px; /* Cambia el ancho a 200 píxeles */
+    height: 60px; /* Cambia la altura a 150 píxeles */
+}
+.logo_name{
+    font-size: 26px;
+    font-weight: 600;
+    color: #333;
+    text-decoration: none
+}
+
+.navbar .links {
+    display: flex;
+    gap: 2rem;
+    text-decoration: none;
+    
+}
+
+.links li a{
+    font-size: 1.6rem; /* Texto más legible */
+    line-height: 1.5; /* Espaciado entre líneas */
+    margin: 1.5rem 0; /* Espacio vertical más ajustado */
+    font-weight: 550;
+    text-decoration: none;
+}
+
+.navbar .icono_menu {
+    color: #6e6b6b;
+    font-size: 2rem;
+    cursor: pointer;
+    display: none;
+}
+
+.action_btn {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 2rem; /* Espacio entre los botones */
+    gap: 1.5rem; /* Espacio entre los botones */
+    text-decoration: none;
+}
+
+.action_btn a {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 1.5rem;
+    font-weight: bolder;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    font-size: 1.6rem; /* Texto más legible */
+    line-height: 1.5; /* Espaciado entre líneas */
+    margin: 1.5rem 0; /* Espacio vertical más ajustado */
+    text-decoration: none;
+}
+
+.action_btn a:hover {
+    transform: scale(1.05);
+    color: #fff;
+    text-decoration: none;
+}
+
+.action_btn a:active {
+    transform: scale(0.95);
+    text-decoration: none;
+}
+
+/* Mostrar menú */
+.mostrar-menu {
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    height: 0;
+    width: 30rem; /* 300px */
+    background: #fff;
+    backdrop-filter: blur(15px);
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.mostrar-menu.open {
+    height: 28rem; /* 270px */
+}
+
+.mostrar-menu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mostrar-menu li a{
+    font-size: 1.6rem; /* Texto más legible */
+    line-height: 1px; /* Espaciado entre líneas */
+    margin: 1.5rem 0; /* Espacio vertical más ajustado */
+    font-weight: 550;
+}
+
+.mostrar-menu .action_btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilos generales */
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+a:hover {
+    color: var(--hover-color);
+}
+
+@media (max-width: 992px) {
+    .navbar .links,
+    .navbar .action_btn {
+        display: none;
+    }
+
+    .navbar .icono_menu {
+        display: block;
+    }
+
+    .mostrar-menu {
+        display: block;
+    }
+}
+
+@media (max-width: 576px) {
+    .mostrar-menu {
+        left: 2rem;
+        width: unset;
+    }
+}
+
+/*img-req*/
+
+.container-infor img {
+
+    display: block; /* Elimina el pequeño espacio debajo de la imagen */
+    width:97%; /* La imagen no excederá el ancho de su contenedor */
+    height: 55vh; /* Mantiene la proporción de la imagen */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+    object-fit: cover; /* Ajusta la imagen para que llene el contenedor sin deformarse */
+}
+
+/*Estilo de la informacion*/
+
+.container {
+	max-width: 120rem;
+	margin: 100px;
+}
+
+.informacion {
+    max-width: 1500px; /*medida de ancho de la sesion*/
+    margin: auto; /*medidas de los espacios externos en la parte superios y inferios*/
+    padding: 60px; /*espacion internos*/
+    background-color: #ffffff; /*fondo de la sesion*/
+
+}
+
+/* Estilo para el encabezado h2 de cambio de propietario */
+h1 {
+    font-size: 25px; /* Tamaño del título ajustado */
+    margin-bottom: 1rem;
+    text-align: left;
+    font-weight: bold;
+}
+
+
+/* Estilo del párrafo */
+p {
+    font-size: 2.0rem; /* Texto más legible */
+    line-height: 1.5; /* Espaciado entre líneas */
+}
+
+/* Estilo para el encabezado h3 */
+h3 {
+    color: #333333;
+    margin-bottom: 11px;
+}
+h3 b{
+    font-size: 25px;
+    color: #333;
+    font-weight: bold;
+    
+}
+
+/*estilo de la lista de requisitos*/
+.lista_requisitos{
+    list-style-type: none;  /* Elimina los puntos o números predeterminados de la lista*/
+    padding: 0;  /* Elimina el relleno interno de la lista */
+    margin-left: 40px; /* Corre la lista hacia la derecha */
+}
+
+.lista_requisitos li {
+    position: relative;
+    margin-bottom: 60px; /*es para el espacio de cada lista*/
+    padding-left: 40px; /* Espacio para el ícono y el texto */
+}
+
+
+.lista_requisitos li::before {
+    content: ''; /*Para que el ciculo salga sin numero*/
+    position: absolute;   /* Posiciona el número o ícono en relación al ítem de la lista */
+    left: 0;  /* Posiciona el número o ícono en el extremo izquierdo del ítem */
+    top: 0;  /* Alinea el número o ícono con la parte superior del ítem */
+    background-color:black; /*Color del circulo*/
+    width: 20px; /* Define el ancho del círculo */
+    height: 20px;  /* Define la altura del círculo */
+    border-radius: 50%; /* Hace que el contenedor del número sea un círculo */
+    box-shadow: 0 4px 6px rgba(114, 114, 114, 0.2); /* Añade sombra al círculo */
+}
+
+/* Estilo para el título del paso dentro de la lista */
+.lista_requisitos strong {
+    display: block; /*Es para que el tutulo ocupe solo esa linea*/
+    font-size: 1.2em; /*Tamaño del titulo*/
+    color: #2c3e50; /*Color de la letra*/
+    margin-bottom: 5px;      /* Añade espacio debajo del título */
+}
+
+/* Estilo para el párrafo descriptivo dentro de la lista */
+.lista_requisitos p {
+    font-size: 20px; /*Tamaño de la letra del parrafo*/
+    color: #555; /*Color de la letra*/
+    margin: 0 0 10px 0; /* Añade un pequeño margen debajo del párrafo */
+}
+
+/* Estilo para los enlaces dentro de la lista */
+.lista_requisitos a {
+    text-decoration: none;  /* Elimina el subrayado del enlace */
+    color: #53b1f0e0; /*Color del enlace*/
+    font-weight: bold; /* Hace que el texto del enlace sea negrita */
+}
+
+/* Estilo para cuando el enlace es hovered (pasado el mouse por encima) */
+.lista_requisitos a:hover {
+    color: #2980b9; /*Cambia de color al pasar el maouse*/
+    text-decoration: none;
+}
+
+/*Texto en negrita*/
+b {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    
+}
+/* Estilo general para el enlace */
+a {
+    font-size: 18px;
+    color: var(--azul);
+    text-decoration: none;
+    font-weight: bold;
+    word-wrap: break-word; /* Permite que el texto se divida en varias líneas si es muy largo */
+}
+
+
+a:hover {
+    text-decoration: underline;
+}
+
+/*boton comenzar solicitud*/
+.bnt-comenzar{
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente (opcional) */
+    margin-top: 50px; /* Baja el botón un poco más abajo en la pantalla */
+    height: 5px;
+
+}
+
+.boton-comnezar-solicitud{
+    text-decoration: none;
+    color: #333; /*color de la letra*/
+    border: .1rem solid #333; /*para ponerle el gruesor al marco y el color*/
+    border-radius: 20rem; /* Hace que los bordes del botón sean redondeados */
+    padding: .5rem 1.5rem;
+    align-self: baseline;
+    transition: all 0.4s;
+}
+
+/*efecto del boton al pasar el mouse*/
+.boton-comnezar-solicitud:hover{
+    background: #a7dcfa;
+    border: .1rem solid #056ca8; /*para ponerle el gruesor al marco y el color*/
+    border-radius: 20rem; /* Hace que los bordes del botón sean redondeados */
+    box-shadow: 3px 3px 3px #056ca8; /* Sombra más prominente al pasar el ratón */
+    text-decoration: none; /* Eliminar cualquier subrayado en el texto */
+}
+
+
+.footer-re{
+    background-color: var(--azul);
+    height: 100px;
+}
+
+
+/*medidas para que se adacte a las pantallas */
+@media (max-width: 1024px){
+
+    .header,
+    main{
+        padding: 20px;
+    }
+
+    #icon_menu{
+        display: block;
+        cursor: pointer;
+        font-size: 24px;
+    }
+
+    .buttons{
+        display: none;
+    }
+
+    .menu{
+        height: 0px;
+        position: absolute;
+        right: 20px;
+        top: 70px;
+        overflow: hidden;
+        z-index: 10;
+        box-shadow: 0px 0px 30px -20px rgba(0,0,0,0.5);
+        transition: all 300ms;
+        flex-direction: row; /* Cambiado a 'row' para que los elementos se dispongan en una fila */
+    }
+
+    .menu nav ul{
+        padding: 20px 0px;
+        flex-direction: row; /* Cambiado a 'row' para que los elementos se dispongan en una fila */
+        display: flex;
+        background: #fff;
+    }
+
+    .menu nav ul li{
+        padding: 5px px; /* Ajusta el padding para una fila */
+    }
+
+    .mostrar_menu{ /*CLASE MANIPULADA POR JS*/
+        height: 150px;
+        display: flex;
+        flex-direction: row;
+        background-color: white;
+        transition: none;
+    }   
+
+    .mostrar_menu ul{
+        display: flex;
+        flex-direction: column;
+        transition: none;
+    }
+}
+
+@media (max-width: 920px){
+    .informacion{
+        width: 100%;
+        height: auto;
+        flex-wrap: wrap;
+    }
+    #img{
+        display: none;
+    }
+    
+}

@@ -1,0 +1,591 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+/*colores*/
+:root{
+    --background-color: white;
+    --text-title-color: #053D4E;
+    --text-color: #323638;
+    --icon-menu-color: #707780;
+    --menu-color: #707780;
+
+    --text-srlrcted-color: #355CC0;
+    --background-selected: #EBF0FF;
+    --background-hover: #F7F9FA;
+
+    --border--color: #E6E9ED;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito Sana", sans-serif;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+}
+
+
+
+header{
+    z-index: 200;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.45rem 2rem 0.45rem 1.27rem;
+    border-bottom: 1px solid var(--border--color);
+    position: fixed;
+    background-color: var(--background-color);
+    top: 0;
+    left: 0;
+}
+
+.left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.menu-container{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.menu{
+    width: 1.5rem;
+    height: 37%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu div{
+    width: 100%;
+    height: 0.15rem;
+    background-color: var(--menu-color);
+    transition: all 0.2s ease;
+}
+
+.brand{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.brand .logo{
+    width: 4rem;
+}
+
+.brand .name{
+    font-size: 1.9rem;
+    font-weight: 900;
+    color: var(--text-title-color);
+}
+
+.right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.right a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s ease;
+}
+
+.right a:hover{
+    background-color: var(--background-hover);
+}
+
+.right img{
+    width: 1.5rem;
+    margin: 0.5rem;
+}
+
+.right .user{
+    width: 2.1rem;
+    border-radius: 50%;
+}
+
+/*menu lateral*/
+.sidebar{
+    margin-top: 5rem;
+    width: 17.75rem;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    padding: 1.1rem 0;
+    border-right: 1px solid var(--border--color);
+    overflow: auto;
+    background-color: var(--background-color);
+    transition: width 0.5s ease;
+}
+
+.sidebar.menu-toggle{
+    width: 4.2rem;
+}
+
+.sidebar a{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.2rem 0.7rem;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    border-radius: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    color: var(--text-color);
+}
+
+.sidebar a:hover{
+    background-color: var(--background-hover);
+}
+
+.sidebar img{
+    width: 1.7rem;
+}
+
+
+
+/*ESTILO DEL LA OPCION SELECIONADA DEL MENU*/
+nav a {
+           color: white;
+           text-decoration: none;
+           display: block;
+           padding: 10px;
+       }
+       nav a:hover, .active {
+        font-weight: bold; /* Resalta la opción del menú activa */
+        color: var(--text-srlrcted-color);
+        background-color: var(--background-selected);
+       }
+
+
+
+/*main*/
+main{
+    margin-top: 3.5rem;
+    margin-left: 18.75rem;
+    padding: 3rem;
+    transition: margin-left 0.5s ease;
+}
+
+main.menu-toggle{
+    margin-left: 5rem;
+}
+
+/*barra de buscar o filtrar*/
+/* Contenedor principal */
+.container {
+    width: 100%;
+    margin: 10px auto;
+    border: 2px solid var(--background-hover);
+
+}
+
+
+/* Estilo del filtro para alinear los elementos en una línea */
+.filtro {
+    display: flex;
+    justify-content: space-between; /* Espacio entre el título y el buscador */
+    align-items: center; /* Alineación vertical centrada */
+    padding: 10px;
+    gap: 10px;
+}
+
+/* Título */
+.filtro h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+/* Contenedor del input y botón de búsqueda */
+.buscador {
+    display: flex;
+    align-items: center; /* Alinea verticalmente los elementos */
+}
+
+/* Input de búsqueda */
+.buscador input[type="text"] {
+    padding: 8px 35px;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px; /* Redondea solo los bordes izquierdos */
+    outline: none;
+    border-right: none; /* Elimina el borde derecho para unir con el botón */
+}
+
+/* Botón de búsqueda */
+.btn-buscar {
+    background-color: #007bff;
+    border-radius: 0 5px 5px 0; /* Redondea solo los bordes derechos */
+    padding: 8px;
+    cursor: pointer;
+}
+
+.btn-buscar img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+/* Media Query para pantallas móviles */
+@media (max-width: 768px) {
+    .filtro {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+    .buscador input[type="text"] {
+        width: 100%; /* Ocupa todo el ancho */
+        border-radius: 5px; /* Redondea todos los bordes para móviles */
+        border-right: 1px solid #ccc; /* Restablece el borde derecho */
+    }
+
+    .btn-buscar {
+        border-radius: 5px; /* Redondea completamente en móviles */
+    }
+
+    .filtro h2 {
+        font-size: 20px;
+        text-align: center;
+    }
+}
+/* Contenedor principal */
+.container2 {
+    border: 2px solid var(--background-hover);
+    border-radius: 20px;
+    overflow-x: auto; /* Habilita desplazamiento horizontal en caso de ser necesario */
+    margin: 20px;
+    width: 100%;
+}
+
+/* Tabla básica */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #333;
+    font-size: 14px;
+    table-layout: auto; /* La tabla se adapta al contenido */
+}
+
+/* Encabezado */
+thead tr {
+    background: var(--background-selected);
+}
+
+th {
+    padding: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: left;
+    border-bottom: 2px solid var(--background-hover);
+}
+
+/* Celdas */
+td {
+    padding: 12px;
+    border-bottom: 1px solid var(--background-hover);
+    word-wrap: break-word; /* Ajusta el texto dentro de las celdas */
+}
+
+/* Efecto al pasar sobre la fila */
+tbody tr:hover {
+    background: var(--background-hover);
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    /* Reduce el tamaño de la fuente para pantallas pequeñas */
+    table {
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    /* Hace que la tabla se pueda desplazar horizontalmente en pantallas pequeñas */
+    .container2 {
+        -webkit-overflow-scrolling: touch; /* Mejor experiencia de desplazamiento en dispositivos táctiles */
+    }
+
+    /* Hace que las celdas se alineen de manera vertical en pantallas pequeñas */
+    td {
+        display: block;
+        text-align: right;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    td::before {
+        /* Crea una etiqueta de campo para cada celda */
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        font-weight: bold;
+    }
+
+    /* Ajuste para el encabezado en pantallas pequeñas */
+    thead {
+        display: none; /* Oculta el encabezado para que no ocupe espacio */
+    }
+
+    /* Estilo para filas en dispositivos móviles, mejorando el aspecto visual */
+    tr {
+        display: block;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+    }
+}
+
+/* Botones */
+.btn-registrar {
+    display: flex; /* Alinea los elementos horizontalmente */
+    justify-content: right; /* Espacio entre los botones */
+    gap: 55px; /* Espacio adicional entre botones */
+    margin: 20px; /* Separación externa */
+}
+
+.bntregi button {
+    padding: 12px 35px; /* Espacio interno del botón */
+    font-size: 16px;
+    border: none;
+    border-radius: 20px; /* Bordes redondeados */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Animación suave */
+    background-color: #3295ff; /* Azul */
+    color: white;
+}
+.bntregi button:hover {
+    background-color: #0f57a5; /* Azul más oscuro al pasar el mouse */
+}
+
+
+/*estilo de la cuenta de usuario*/
+
+.titulo-cuenta{
+    justify-content: left; /* Espacio entre los botones */
+    margin: 0;
+    font-size: 1.0rem;
+}
+
+.bnt-nuevopqrs button{
+    padding: 12px 35px; /* Espacio interno del botón */
+    font-size: 16px;
+    border: none;
+    border-radius: 20px; /* Bordes redondeados */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Animación suave */
+    background-color: #3295ff; /* Azul */
+    color: white;
+}
+
+        /* Estilos para el contenedor del menú lateral */
+        .menu-lateral {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 250px;
+            height: 17rem;
+            margin-top: 5rem;
+            background-color: white;
+            color: #fff;
+            padding-top: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        /* Estilos para enlaces en el menú */
+        .menu-lateral a {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.2rem 0.7rem;
+            text-decoration: none;
+            margin: 0 0.5rem;
+            border-radius: 0.5rem;
+            white-space: nowrap;
+            overflow: hidden;
+            color: var(--text-color);
+        }
+        
+        .menu-lateral a:hover {
+            background-color: var(--background-hover);
+        }
+        
+        /* Estilos para el contenido principal */
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+            transition: margin-left 0.3s ease;
+        }
+        
+        /* Ocultar el menú lateral en dispositivos móviles inicialmente */
+        .menu-lateral.mobile-hidden {
+            transform: translateX(-100%);
+        }
+        
+        /* ----- Media Queries ----- */
+        /* Ajustes para dispositivos móviles */
+        @media (max-width: 768px) {
+            /* El menú lateral ocupa menos espacio en dispositivos móviles */
+            .menu-lateral {
+                width: 200px;
+                z-index: 1000;
+                transform: translateX(-100%);
+            }
+        
+            /* Cuando se muestre el menú, desplazamos el contenido principal */
+            .menu-lateral.show {
+                transform: translateX(0);
+            }
+        
+            .main-content {
+                margin-left: 0;
+                padding-top: 60px;
+            }
+        
+            /* Botón de menú para dispositivos móviles */
+            .menu-toggle {
+                position: fixed;
+                top: 10px;
+                left: 10px;
+                color: black;
+                border: none;
+                padding: 10px 15px;
+                font-size: 18px;
+                cursor: pointer;
+                z-index: 1001;
+            }
+        }
+        
+        /* ----- Ajustes Adicionales para el Menú Lateral en Pantallas Pequeñas ----- */
+        @media only screen and (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+            .sidebar.show {
+                transform: translateX(0);
+            }
+            main {
+                margin-left: 0;
+            }
+        }
+        
+        /* Ajustar el contenido principal cuando el menú lateral está visible */
+        .sidebar.show + main {
+            margin-left: 18.75rem;
+        }
+        
+
+         /* Estilos para el contenedor del menú lateral */
+    .menu-lateral {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 250px;
+        height: 17rem;
+        margin-top: 5rem;
+        background-color: white;
+        color: #fff;
+        padding-top: 20px;
+        transition: transform 0.3s ease;
+    }
+
+    /* Estilos para enlaces en el menú */
+    .menu-lateral a {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 1.2rem 0.7rem;
+        text-decoration: none;
+        margin: 0 0.5rem;
+        border-radius: 0.5rem;
+        white-space: nowrap;
+        overflow: hidden;
+        color: var(--text-color);
+    }
+
+    .menu-lateral a:hover {
+        background-color: var(--background-hover);
+    }
+
+    /* Estilos para el contenido principal */
+    .main-content {
+        margin-left: 250px;
+        padding: 20px;
+        transition: margin-left 0.3s ease;
+    }
+
+    /* Ocultar el menú lateral en dispositivos móviles inicialmente */
+    .menu-lateral.mobile-hidden {
+        transform: translateX(-100%);
+    }
+
+    /* ----- Media Queries ----- */
+    /* Ajustes para dispositivos móviles */
+    @media (max-width: 768px) {
+        /* El menú lateral ocupa menos espacio en dispositivos móviles */
+        .menu-lateral {
+            width: 200px;
+            z-index: 1000;
+            transform: translateX(-100%);
+        }
+
+        /* Cuando se muestre el menú, desplazamos el contenido principal */
+        .menu-lateral.show {
+            transform: translateX(0);
+        }
+
+        .main-content {
+            margin-left: 0;
+            padding-top: 60px;
+        }
+
+        /* Botón de menú para dispositivos móviles */
+        .menu-toggle {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            color: black;
+            border: none;
+            padding: 10px 15px;
+            font-size: 18px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+    }
+
+    /* ----- Ajustes Adicionales para el Menú Lateral en Pantallas Pequeñas ----- */
+    @media only screen and (max-width: 768px) {
+        .sidebar {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        .sidebar.show {
+            transform: translateX(0);
+        }
+        main {
+            margin-left: 0;
+        }
+    }
+
+    /* Ajustar el contenido principal cuando el menú lateral está visible */
+    .sidebar.show + main {
+        margin-left: 18.75rem;
+    }
